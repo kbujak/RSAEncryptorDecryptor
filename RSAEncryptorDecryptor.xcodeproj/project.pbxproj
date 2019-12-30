@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		56C8FF88A790CD07C7892194 /* Pods_RSAEncryptorDecryptorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03E3D16403EF4F129364EB /* Pods_RSAEncryptorDecryptorTests.framework */; };
 		718FC3056164861980E16A3B /* Pods_RSAEncryptorDecryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */; };
+		F0746A2923BA713B0089771E /* FileManagerFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A2823BA713B0089771E /* FileManagerFacade.swift */; };
+		F0746A2C23BA73350089771E /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A2B23BA73350089771E /* AppUtility.swift */; };
+		F0746A2F23BA74B70089771E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A2E23BA74B70089771E /* RootViewModel.swift */; };
+		F0746A3123BA7B3A0089771E /* String+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A3023BA7B3A0089771E /* String+ASCII.swift */; };
+		F0746A3423BA84C40089771E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A3323BA84C40089771E /* RootCoordinator.swift */; };
+		F08BA0F223BAA69400693610 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0F123BAA69400693610 /* Key.swift */; };
 		F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */; };
 		F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */; };
 		F08C3A5D23BA6CB700EA2957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */; };
@@ -34,6 +40,12 @@
 		58CAB348677559AEE90DCE48 /* Pods-RSAEncryptorDecryptorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptorTests.debug.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptorTests/Pods-RSAEncryptorDecryptorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		738DCFF811A78842859EA4E9 /* Pods-RSAEncryptorDecryptorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptorTests.release.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptorTests/Pods-RSAEncryptorDecryptorTests.release.xcconfig"; sourceTree = "<group>"; };
 		86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSAEncryptorDecryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0746A2823BA713B0089771E /* FileManagerFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerFacade.swift; sourceTree = "<group>"; };
+		F0746A2B23BA73350089771E /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
+		F0746A2E23BA74B70089771E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		F0746A3023BA7B3A0089771E /* String+ASCII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ASCII.swift"; sourceTree = "<group>"; };
+		F0746A3323BA84C40089771E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		F08BA0F123BAA69400693610 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		F08C3A5323BA6CB300EA2957 /* RSAEncryptorDecryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSAEncryptorDecryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +100,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0746A2723BA71070089771E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0746A2823BA713B0089771E /* FileManagerFacade.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F0746A2A23BA732C0089771E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0746A2B23BA73350089771E /* AppUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F0746A2D23BA74AB0089771E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F0746A2E23BA74B70089771E /* RootViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F0746A3223BA84A90089771E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F0746A3323BA84C40089771E /* RootCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F08BA0F023BAA68800693610 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08BA0F123BAA69400693610 /* Key.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F08C3A4A23BA6CB300EA2957 = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				F08C3A7823BA6E6D00EA2957 /* Common */,
+				F0746A3223BA84A90089771E /* Coordinators */,
 				F08C3A7B23BA6E9E00EA2957 /* Controllers */,
+				F08BA0F023BAA68800693610 /* Models */,
+				F0746A2D23BA74AB0089771E /* ViewModels */,
 			);
 			path = RSAEncryptorDecryptor;
 			sourceTree = "<group>";
@@ -137,12 +192,15 @@
 		F08C3A7823BA6E6D00EA2957 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F0746A2A23BA732C0089771E /* Utilities */,
+				F0746A2723BA71070089771E /* Helpers */,
 				F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */,
 				F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */,
 				F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */,
 				F08C3A6123BA6CB700EA2957 /* LaunchScreen.storyboard */,
 				F08C3A6423BA6CB700EA2957 /* Info.plist */,
 				F08C3A5E23BA6CB700EA2957 /* Preview Content */,
+				F0746A3023BA7B3A0089771E /* String+ASCII.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -323,8 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0746A3423BA84C40089771E /* RootCoordinator.swift in Sources */,
 				F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */,
+				F08BA0F223BAA69400693610 /* Key.swift in Sources */,
+				F0746A2923BA713B0089771E /* FileManagerFacade.swift in Sources */,
+				F0746A2C23BA73350089771E /* AppUtility.swift in Sources */,
+				F0746A3123BA7B3A0089771E /* String+ASCII.swift in Sources */,
 				F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */,
+				F0746A2F23BA74B70089771E /* RootViewModel.swift in Sources */,
 				F08C3A7A23BA6E9B00EA2957 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
