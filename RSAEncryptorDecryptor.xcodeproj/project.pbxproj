@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56C8FF88A790CD07C7892194 /* Pods_RSAEncryptorDecryptorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03E3D16403EF4F129364EB /* Pods_RSAEncryptorDecryptorTests.framework */; };
+		718FC3056164861980E16A3B /* Pods_RSAEncryptorDecryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */; };
 		F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */; };
 		F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */; };
 		F08C3A5B23BA6CB300EA2957 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5A23BA6CB300EA2957 /* ContentView.swift */; };
@@ -27,6 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10E3E7BC23172372101D133F /* Pods-RSAEncryptorDecryptor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptor.release.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptor/Pods-RSAEncryptorDecryptor.release.xcconfig"; sourceTree = "<group>"; };
+		56572B9B958C78D563340260 /* Pods-RSAEncryptorDecryptor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptor.debug.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptor/Pods-RSAEncryptorDecryptor.debug.xcconfig"; sourceTree = "<group>"; };
+		58CAB348677559AEE90DCE48 /* Pods-RSAEncryptorDecryptorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptorTests.debug.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptorTests/Pods-RSAEncryptorDecryptorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		738DCFF811A78842859EA4E9 /* Pods-RSAEncryptorDecryptorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAEncryptorDecryptorTests.release.xcconfig"; path = "Target Support Files/Pods-RSAEncryptorDecryptorTests/Pods-RSAEncryptorDecryptorTests.release.xcconfig"; sourceTree = "<group>"; };
+		86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSAEncryptorDecryptor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A5323BA6CB300EA2957 /* RSAEncryptorDecryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSAEncryptorDecryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		F08C3A6923BA6CB700EA2957 /* RSAEncryptorDecryptorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSAEncryptorDecryptorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A6D23BA6CB700EA2957 /* RSAEncryptorDecryptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAEncryptorDecryptorTests.swift; sourceTree = "<group>"; };
 		F08C3A6F23BA6CB700EA2957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB03E3D16403EF4F129364EB /* Pods_RSAEncryptorDecryptorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSAEncryptorDecryptorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718FC3056164861980E16A3B /* Pods_RSAEncryptorDecryptor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C8FF88A790CD07C7892194 /* Pods_RSAEncryptorDecryptorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31BC94D669E2C1AAAE49D5F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56572B9B958C78D563340260 /* Pods-RSAEncryptorDecryptor.debug.xcconfig */,
+				10E3E7BC23172372101D133F /* Pods-RSAEncryptorDecryptor.release.xcconfig */,
+				58CAB348677559AEE90DCE48 /* Pods-RSAEncryptorDecryptorTests.debug.xcconfig */,
+				738DCFF811A78842859EA4E9 /* Pods-RSAEncryptorDecryptorTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5F25E8FFA2F384CE9E3CA2C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */,
+				FB03E3D16403EF4F129364EB /* Pods_RSAEncryptorDecryptorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F08C3A4A23BA6CB300EA2957 = {
 			isa = PBXGroup;
 			children = (
 				F08C3A5523BA6CB300EA2957 /* RSAEncryptorDecryptor */,
 				F08C3A6C23BA6CB700EA2957 /* RSAEncryptorDecryptorTests */,
 				F08C3A5423BA6CB300EA2957 /* Products */,
+				31BC94D669E2C1AAAE49D5F1 /* Pods */,
+				5F25E8FFA2F384CE9E3CA2C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F08C3A7223BA6CB700EA2957 /* Build configuration list for PBXNativeTarget "RSAEncryptorDecryptor" */;
 			buildPhases = (
+				734EABD48E89C59BEFE12357 /* [CP] Check Pods Manifest.lock */,
 				F08C3A4F23BA6CB300EA2957 /* Sources */,
 				F08C3A5023BA6CB300EA2957 /* Frameworks */,
 				F08C3A5123BA6CB300EA2957 /* Resources */,
+				754586DEC24350E78CFD739D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F08C3A7523BA6CB700EA2957 /* Build configuration list for PBXNativeTarget "RSAEncryptorDecryptorTests" */;
 			buildPhases = (
+				3DE91EF474B8FB256FFE68AD /* [CP] Check Pods Manifest.lock */,
 				F08C3A6523BA6CB700EA2957 /* Sources */,
 				F08C3A6623BA6CB700EA2957 /* Frameworks */,
 				F08C3A6723BA6CB700EA2957 /* Resources */,
@@ -202,6 +238,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DE91EF474B8FB256FFE68AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSAEncryptorDecryptorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		734EABD48E89C59BEFE12357 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSAEncryptorDecryptor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		754586DEC24350E78CFD739D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSAEncryptorDecryptor/Pods-RSAEncryptorDecryptor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSAEncryptorDecryptor/Pods-RSAEncryptorDecryptor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RSAEncryptorDecryptor/Pods-RSAEncryptorDecryptor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F08C3A4F23BA6CB300EA2957 /* Sources */ = {
@@ -360,6 +460,7 @@
 		};
 		F08C3A7323BA6CB700EA2957 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56572B9B958C78D563340260 /* Pods-RSAEncryptorDecryptor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -380,6 +481,7 @@
 		};
 		F08C3A7423BA6CB700EA2957 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10E3E7BC23172372101D133F /* Pods-RSAEncryptorDecryptor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,6 +502,7 @@
 		};
 		F08C3A7623BA6CB700EA2957 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58CAB348677559AEE90DCE48 /* Pods-RSAEncryptorDecryptorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -422,6 +525,7 @@
 		};
 		F08C3A7723BA6CB700EA2957 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 738DCFF811A78842859EA4E9 /* Pods-RSAEncryptorDecryptorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
