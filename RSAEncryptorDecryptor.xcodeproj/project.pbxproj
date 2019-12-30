@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,11 @@
 		718FC3056164861980E16A3B /* Pods_RSAEncryptorDecryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AFAAEF21B89CD54EF57C65 /* Pods_RSAEncryptorDecryptor.framework */; };
 		F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */; };
 		F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */; };
-		F08C3A5B23BA6CB300EA2957 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5A23BA6CB300EA2957 /* ContentView.swift */; };
 		F08C3A5D23BA6CB700EA2957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */; };
 		F08C3A6023BA6CB700EA2957 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08C3A5F23BA6CB700EA2957 /* Preview Assets.xcassets */; };
 		F08C3A6323BA6CB700EA2957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08C3A6123BA6CB700EA2957 /* LaunchScreen.storyboard */; };
 		F08C3A6E23BA6CB700EA2957 /* RSAEncryptorDecryptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A6D23BA6CB700EA2957 /* RSAEncryptorDecryptorTests.swift */; };
+		F08C3A7A23BA6E9B00EA2957 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A7923BA6E9B00EA2957 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		F08C3A5323BA6CB300EA2957 /* RSAEncryptorDecryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSAEncryptorDecryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F08C3A5A23BA6CB300EA2957 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F08C3A5F23BA6CB700EA2957 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F08C3A6223BA6CB700EA2957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		F08C3A6923BA6CB700EA2957 /* RSAEncryptorDecryptorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSAEncryptorDecryptorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A6D23BA6CB700EA2957 /* RSAEncryptorDecryptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAEncryptorDecryptorTests.swift; sourceTree = "<group>"; };
 		F08C3A6F23BA6CB700EA2957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F08C3A7923BA6E9B00EA2957 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		FB03E3D16403EF4F129364EB /* Pods_RSAEncryptorDecryptorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSAEncryptorDecryptorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,6 @@
 				58CAB348677559AEE90DCE48 /* Pods-RSAEncryptorDecryptorTests.debug.xcconfig */,
 				738DCFF811A78842859EA4E9 /* Pods-RSAEncryptorDecryptorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,13 +111,8 @@
 		F08C3A5523BA6CB300EA2957 /* RSAEncryptorDecryptor */ = {
 			isa = PBXGroup;
 			children = (
-				F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */,
-				F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */,
-				F08C3A5A23BA6CB300EA2957 /* ContentView.swift */,
-				F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */,
-				F08C3A6123BA6CB700EA2957 /* LaunchScreen.storyboard */,
-				F08C3A6423BA6CB700EA2957 /* Info.plist */,
-				F08C3A5E23BA6CB700EA2957 /* Preview Content */,
+				F08C3A7823BA6E6D00EA2957 /* Common */,
+				F08C3A7B23BA6E9E00EA2957 /* Controllers */,
 			);
 			path = RSAEncryptorDecryptor;
 			sourceTree = "<group>";
@@ -138,6 +132,27 @@
 				F08C3A6F23BA6CB700EA2957 /* Info.plist */,
 			);
 			path = RSAEncryptorDecryptorTests;
+			sourceTree = "<group>";
+		};
+		F08C3A7823BA6E6D00EA2957 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */,
+				F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */,
+				F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */,
+				F08C3A6123BA6CB700EA2957 /* LaunchScreen.storyboard */,
+				F08C3A6423BA6CB700EA2957 /* Info.plist */,
+				F08C3A5E23BA6CB700EA2957 /* Preview Content */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F08C3A7B23BA6E9E00EA2957 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F08C3A7923BA6E9B00EA2957 /* RootViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +325,7 @@
 			files = (
 				F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */,
 				F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */,
-				F08C3A5B23BA6CB300EA2957 /* ContentView.swift in Sources */,
+				F08C3A7A23BA6E9B00EA2957 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,10 +479,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RSAEncryptorDecryptor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RSAEncryptorDecryptor/Common/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = RSAEncryptorDecryptor/Info.plist;
+				INFOPLIST_FILE = RSAEncryptorDecryptor/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,10 +500,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"RSAEncryptorDecryptor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RSAEncryptorDecryptor/Common/Preview Content\"";
 				DEVELOPMENT_TEAM = 4VV3H7446H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = RSAEncryptorDecryptor/Info.plist;
+				INFOPLIST_FILE = RSAEncryptorDecryptor/Common/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
