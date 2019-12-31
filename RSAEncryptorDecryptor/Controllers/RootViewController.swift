@@ -13,8 +13,11 @@ import RxSwift
 class RootViewController: UIViewController {
     private let publicKeyButton = UIButton()
     private let privacyKeyButton = UIButton()
+    private let encryptButton = UIButton()
+    private let decryptButton = UIButton()
     private let publicKeyLabel = UILabel()
     private let privateKeyLabel = UILabel()
+    private let textView = UITextView()
 
     private let viewModel: RootViewModel
     private let bag = DisposeBag()
@@ -28,7 +31,13 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        [publicKeyButton, privacyKeyButton, publicKeyLabel, privateKeyLabel].forEach { view.addSubview($0) }
+        [publicKeyButton,
+         privacyKeyButton,
+         publicKeyLabel,
+         privateKeyLabel,
+         encryptButton,
+         decryptButton,
+         textView].forEach { view.addSubview($0) }
 
         setupLayouts()
         setupStyles()
@@ -54,10 +63,24 @@ private extension RootViewController {
         privacyKeyButton.autoPinEdge(.bottom, to: .bottom, of: view, withOffset: -50)
         privacyKeyButton.autoSetDimension(.height, toSize: 50)
         privacyKeyButton.autoSetDimension(.width, toSize: 200)
+
+        encryptButton.autoPinEdge(.bottom, to: .top, of: publicKeyButton, withOffset: -30)
+        encryptButton.autoPinEdge(.left, to: .left, of: view, withOffset: 20)
+        encryptButton.autoPinEdge(.right, to: .left, of: decryptButton, withOffset: -50)
+        encryptButton.autoMatch(.width, to: .width, of: decryptButton)
+
+        decryptButton.autoPinEdge(.bottom, to: .top, of: publicKeyButton, withOffset: -30)
+        decryptButton.autoPinEdge(.right, to: .right, of: view, withOffset: -20)
+        
+        textView.autoPinEdge(.top, to: .bottom, of: privateKeyLabel, withOffset: 30)
+        textView.autoMatch(.width, to: .width, of: view)
+        textView.autoPinEdge(.bottom, to: .top, of: decryptButton, withOffset: -30)
     }
 
     func setupStyles() {
         view.backgroundColor = .white
+
+        textView.isUserInteractionEnabled = false
 
         publicKeyLabel.text = "KPub: not generated"
         privateKeyLabel.text = "KPriv: not generated"
@@ -72,12 +95,21 @@ private extension RootViewController {
         privacyKeyButton.setTitle("Choose private key", for: .normal)
         privacyKeyButton.setTitleColor(.white, for: .normal)
         privacyKeyButton.backgroundColor = .lightGray
+
+        encryptButton.setTitle("Encrypt", for: .normal)
+        encryptButton.setTitleColor(.white, for: .normal)
+        encryptButton.backgroundColor = .black
+
+        decryptButton.setTitle("Decrypt", for: .normal)
+        decryptButton.setTitleColor(.white, for: .normal)
+        decryptButton.backgroundColor = .black
     }
-    
+
     func bindViewToViewModel() {
         let input = RootViewModel.Input(
             publicKeyTrigger: publicKeyButton.rx.tap.asDriver(),
-            privateKeyTrigger: privacyKeyButton.rx.tap.asDriver()
+            privateKeyTrigger: privacyKeyButton.rx.tap.asDriver(),
+            encryptTrigger: encryptButton.rx.tap.asDriver()
         )
         let output = viewModel.transform(input: input)
 
@@ -89,6 +121,10 @@ private extension RootViewController {
             output.privateKey
                 .map { "KPriv: {\($0.firstComponent), \($0.secondComponent)}" }
                 .drive(privateKeyLabel.rx.text),
+
+//            output.isEncryptionEnabled.drive(encryptButton.rx.isEnabled),
+            output.isDecryptionEnabled.drive(decryptButton.rx.isEnabled),
+            output.text.drive(textView.rx.text)
 
         ].forEach { $0.disposed(by: bag) }
     }

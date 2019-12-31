@@ -15,6 +15,8 @@
 		F0746A3123BA7B3A0089771E /* String+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A3023BA7B3A0089771E /* String+ASCII.swift */; };
 		F0746A3423BA84C40089771E /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0746A3323BA84C40089771E /* RootCoordinator.swift */; };
 		F08BA0F223BAA69400693610 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0F123BAA69400693610 /* Key.swift */; };
+		F08BA0F423BAAE1200693610 /* RSAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0F323BAAE1200693610 /* RSAManager.swift */; };
+		F08BA0F623BAB19A00693610 /* ArithmeticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BA0F523BAB19A00693610 /* ArithmeticHelper.swift */; };
 		F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */; };
 		F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */; };
 		F08C3A5D23BA6CB700EA2957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F08C3A5C23BA6CB700EA2957 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		F0746A3023BA7B3A0089771E /* String+ASCII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ASCII.swift"; sourceTree = "<group>"; };
 		F0746A3323BA84C40089771E /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		F08BA0F123BAA69400693610 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		F08BA0F323BAAE1200693610 /* RSAManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAManager.swift; sourceTree = "<group>"; };
+		F08BA0F523BAB19A00693610 /* ArithmeticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticHelper.swift; sourceTree = "<group>"; };
 		F08C3A5323BA6CB300EA2957 /* RSAEncryptorDecryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSAEncryptorDecryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08C3A5623BA6CB300EA2957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F08C3A5823BA6CB300EA2957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				F0746A2823BA713B0089771E /* FileManagerFacade.swift */,
+				F08BA0F323BAAE1200693610 /* RSAManager.swift */,
+				F08BA0F523BAB19A00693610 /* ArithmeticHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -383,10 +389,12 @@
 			files = (
 				F0746A3423BA84C40089771E /* RootCoordinator.swift in Sources */,
 				F08C3A5723BA6CB300EA2957 /* AppDelegate.swift in Sources */,
+				F08BA0F623BAB19A00693610 /* ArithmeticHelper.swift in Sources */,
 				F08BA0F223BAA69400693610 /* Key.swift in Sources */,
 				F0746A2923BA713B0089771E /* FileManagerFacade.swift in Sources */,
 				F0746A2C23BA73350089771E /* AppUtility.swift in Sources */,
 				F0746A3123BA7B3A0089771E /* String+ASCII.swift in Sources */,
+				F08BA0F423BAAE1200693610 /* RSAManager.swift in Sources */,
 				F08C3A5923BA6CB300EA2957 /* SceneDelegate.swift in Sources */,
 				F0746A2F23BA74B70089771E /* RootViewModel.swift in Sources */,
 				F08C3A7A23BA6E9B00EA2957 /* RootViewController.swift in Sources */,

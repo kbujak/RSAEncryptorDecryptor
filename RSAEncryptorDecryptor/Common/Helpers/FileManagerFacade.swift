@@ -11,6 +11,7 @@ import Foundation
 protocol FileManagerFacade {
     func retrieveStringFromFile() -> String?
     func retrieveKeyData(from url: URL) -> (String, String)?
+    func save(encryptedText: String)
 }
 
 class FileManagerFacadeImpl: FileManagerFacade {
@@ -46,6 +47,16 @@ class FileManagerFacadeImpl: FileManagerFacade {
             print(error.localizedDescription)
             AppUtility.instance.showError(with: "Could not retrieve text from key file")
             return nil
+        }
+    }
+
+    func save(encryptedText: String) {
+        do {
+        let fileURL = URL(fileURLWithPath: path).appendingPathExtension("enc")
+            try encryptedText.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch let error {
+            print(error.localizedDescription)
+            AppUtility.instance.showError(with: "Could not create file")
         }
     }
 }
