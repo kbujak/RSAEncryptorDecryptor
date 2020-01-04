@@ -12,27 +12,34 @@ class ArithmeticHelper {
     
     static let instance = ArithmeticHelper()
 
-    func modExponentiation(base: UInt64, exponent: UInt64, mod: UInt64) -> UInt64 {
-        var (a, m, n) = (Double(base), Double(exponent), Double(mod))
-        var wynik: Double = 1
-        var a2: Double = modulo(a: a, mod: n)
+    func modExponentiation(base: Decimal, exponent: Decimal, mod: Decimal) -> Decimal {
+        var (a, mTemp, n) = (base, exponent, mod)
+        var wynik = Decimal(1)
+        var a2: Decimal = modulo(a: a, mod: n)
 
-        if modulo(a: m, mod: 2) == 1 { wynik = a2 }
+        if modulo(a: mTemp, mod: 2) == 1 { wynik = a2 }
+        
+        mTemp = mTemp / 2
+        var m = Decimal()
+        NSDecimalRound(&m, &mTemp, 0, .down)
 
-        m = floor(m / 2)
-
-        repeat {
+        while m != 0 {
             a2 = (modulo(a: a2 * a2, mod: n))
             if modulo(a: m, mod: 2) == 1 { wynik = modulo(a: (wynik * a2), mod: n) }
-            m = floor(m / 2)
-        } while m != 0
+            m = m / 2
+            var mTemp2 = Decimal()
+            NSDecimalRound(&mTemp2, &m, 0, .down)
+            m = mTemp2
+        }
 
-        return UInt64(wynik)
+        return wynik
     }
-    
-    func modulo(a: Double, mod: Double) -> Double {
-        let temp = floor(a / mod)
-        let result = a - (temp * mod)
+
+    func modulo(a: Decimal, mod: Decimal) -> Decimal {
+        var temp = a / mod
+        var roundendTemp = Decimal()
+        NSDecimalRound(&roundendTemp, &temp, 0, .down)
+        let result = a - (roundendTemp * mod)
         return result
     }
 }

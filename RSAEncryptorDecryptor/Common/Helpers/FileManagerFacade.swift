@@ -9,7 +9,8 @@
 import Foundation
 
 protocol FileManagerFacade {
-    func retrieveStringFromFile() -> String?
+    func retrievePlainStringFromFile() -> String?
+    func retrieveEncryptedStringFromFile() -> String?
     func retrieveKeyData(from url: URL) -> (String, String)?
     func save(encryptedText: String)
 }
@@ -19,9 +20,21 @@ class FileManagerFacadeImpl: FileManagerFacade {
     private let manager = FileManager.default
     private let path = "/Users/Booyac/Desktop/text"
 
-    func retrieveStringFromFile() -> String? {
+    func retrievePlainStringFromFile() -> String? {
         do {
             let fileURL = URL(fileURLWithPath: path).appendingPathExtension("txt")
+            print(fileURL.absoluteString)
+            return try String(contentsOf: fileURL)
+        } catch let error {
+            print(error.localizedDescription)
+            AppUtility.instance.showError(with: "File doesn't exist")
+            return nil
+        }
+    }
+
+    func retrieveEncryptedStringFromFile() -> String? {
+        do {
+            let fileURL = URL(fileURLWithPath: path).appendingPathExtension("enc")
             print(fileURL.absoluteString)
             return try String(contentsOf: fileURL)
         } catch let error {

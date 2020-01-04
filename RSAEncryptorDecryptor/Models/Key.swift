@@ -6,7 +6,9 @@
 //  Copyright © 2019 Booyac IT. All rights reserved.
 //
 
+import Foundation
+
 struct Key {
-    let firstComponent: UInt64
-    let secondComponent: UInt64
+    let firstComponent: Decimal
+    let secondComponent: Decimal
 }

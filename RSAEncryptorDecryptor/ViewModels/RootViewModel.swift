@@ -23,6 +23,7 @@ class RootViewModel {
     private let privateKey = BehaviorRelay<Key?>(value: nil)
     private let text = BehaviorRelay<String>(value: "Empty")
     private let bag = DisposeBag()
+    private let mock = [63771674411008, 40681930227712, 21165598834688, 1649267441664, 13194139533312, 2748779069440, 56075093016576, 62088047230976]
 
     init(fileManagerFacade: FileManagerFacade = FileManagerFacadeImpl(), rsaManager: RSAManager = RSAManagerImpl()) {
         self.fileManagerFacade = fileManagerFacade
@@ -41,7 +42,11 @@ class RootViewModel {
             .disposed(by: bag)
 
         input.encryptTrigger
-            .drive(onNext: {[weak self] in self?.encrypt() })
+            .drive(onNext: { [weak self] in self?.encrypt() })
+            .disposed(by: bag)
+
+        input.decryptTrigger
+            .drive(onNext: { [weak self] in self?.decrypt() })
             .disposed(by: bag)
 
         let publicKey = self.publicKey.filter { $0 != nil }.map { $0! }
@@ -80,6 +85,7 @@ extension RootViewModel {
         let publicKeyTrigger: Driver<Void>
         let privateKeyTrigger: Driver<Void>
         let encryptTrigger: Driver<Void>
+        let decryptTrigger: Driver<Void>
     }
 
     struct Output {
@@ -95,8 +101,8 @@ private extension RootViewModel {
     func retrieveKey(from url: URL) -> Key? {
         guard
             let keyData = fileManagerFacade.retrieveKeyData(from: url),
-            let firstComponent = UInt64(keyData.0),
-            let secondComponent = UInt64(keyData.1)
+            let firstComponent = Decimal(string: keyData.0),
+            let secondComponent = Decimal(string: keyData.1)
         else { return nil }
 
         return Key(firstComponent: firstComponent, secondComponent: secondComponent)
@@ -104,12 +110,21 @@ private extension RootViewModel {
 
     func encrypt() {
         guard
-            let text = fileManagerFacade.retrieveStringFromFile(),
+            let text = fileManagerFacade.retrievePlainStringFromFile(),
             let key = publicKey.value
         else { return }
         let encryptedArray = rsaManager.encrypt(text: text, with: key)
-        let encryptedString = encryptedArray.map { String($0) }.joined(separator: ", ")
+        let encryptedString = encryptedArray.map { NSDecimalNumber(decimal: $0).stringValue }.joined(separator: ", ")
         self.text.accept("Encrypted text: \n \(encryptedString)")
         fileManagerFacade.save(encryptedText: encryptedString)
+    }
+
+    func decrypt() {
+        guard
+            let text = fileManagerFacade.retrieveEncryptedStringFromFile(),
+            let key = privateKey.value
+        else { return }
+
+        let decryptedArray = rsaManager.decrypt(text: text, with: key)
     }
 }
