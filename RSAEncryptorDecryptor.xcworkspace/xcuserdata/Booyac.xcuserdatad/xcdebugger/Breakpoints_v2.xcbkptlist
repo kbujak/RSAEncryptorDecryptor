@@ -23,33 +23,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6575C482-0168-4218-B5DC-6EE481017DE5"
+            uuid = "3DE179DA-A478-4B64-9B8F-20FB947C3559"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RSAEncryptorDecryptor/ViewModels/RootViewModel.swift"
+            filePath = "RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "decrypt()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "01FB907F-B91D-4AA4-956E-9038CD9B6580"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RSAEncryptorDecryptor/ViewModels/RootViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "encrypt()"
-            landmarkType = "7">
+            startingLineNumber = "44"
+            endingLineNumber = "44">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

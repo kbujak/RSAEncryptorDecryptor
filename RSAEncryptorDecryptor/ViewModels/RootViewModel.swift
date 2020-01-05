@@ -23,7 +23,6 @@ class RootViewModel {
     private let privateKey = BehaviorRelay<Key?>(value: nil)
     private let text = BehaviorRelay<String>(value: "Empty")
     private let bag = DisposeBag()
-    private let mock = [63771674411008, 40681930227712, 21165598834688, 1649267441664, 13194139533312, 2748779069440, 56075093016576, 62088047230976]
 
     init(fileManagerFacade: FileManagerFacade = FileManagerFacadeImpl(), rsaManager: RSAManager = RSAManagerImpl()) {
         self.fileManagerFacade = fileManagerFacade
@@ -52,19 +51,14 @@ class RootViewModel {
         let publicKey = self.publicKey.filter { $0 != nil }.map { $0! }
         let privateKey = self.privateKey.filter { $0 != nil }.map { $0! }
         
-        let isEnabled = Observable.combineLatest(
-            self.publicKey.asObservable(),
-            self.privateKey.asObservable()
-        ) { (publicKey, privateKey) -> Bool in
-            guard publicKey != nil, privateKey != nil else { return false }
-            return true
-        }
+        let isEncryptionEnabled = self.publicKey.map { $0 != nil }.asDriver(onErrorRecover: { _ in Driver.never() })
+        let isDecryptionEnabled = self.privateKey.map { $0 != nil }.asDriver(onErrorRecover: { _ in Driver.never() })
 
         return Output(
             publicKey: publicKey.asDriver(onErrorRecover: { _ in Driver.never() }),
             privateKey: privateKey.asDriver(onErrorRecover: { _ in Driver.never() }),
-            isEncryptionEnabled: isEnabled.asDriver(onErrorRecover: { _ in Driver.never() }),
-            isDecryptionEnabled: isEnabled.asDriver(onErrorRecover: { _ in Driver.never() }),
+            isEncryptionEnabled: isEncryptionEnabled,
+            isDecryptionEnabled: isDecryptionEnabled,
             text: text.asDriver()
         )
     }
@@ -113,9 +107,10 @@ private extension RootViewModel {
             let text = fileManagerFacade.retrievePlainStringFromFile(),
             let key = publicKey.value
         else { return }
+
         let encryptedArray = rsaManager.encrypt(text: text, with: key)
         let encryptedString = encryptedArray.map { NSDecimalNumber(decimal: $0).stringValue }.joined(separator: ", ")
-        self.text.accept("Encrypted text: \n \(encryptedString)")
+        self.text.accept("Encrypted text: \n\(encryptedString)")
         fileManagerFacade.save(encryptedText: encryptedString)
     }
 
@@ -126,5 +121,12 @@ private extension RootViewModel {
         else { return }
 
         let decryptedArray = rsaManager.decrypt(text: text, with: key)
+        let decryptedNumberStringsArray = decryptedArray.map { NSDecimalNumber(decimal: $0).stringValue }
+        let decryptedArrayString = decryptedNumberStringsArray.map { number -> String in
+            StringConverter.instance.convertFromASCIICodeToCharacterString(number)
+        }
+        let decryptedString = decryptedArrayString.reduce("", { $0 + $1 })
+        self.text.accept("Decrypted text: \n\(decryptedString)")
+        fileManagerFacade.save(decryptedText: decryptedString)
     }
 }

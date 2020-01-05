@@ -18,9 +18,6 @@ class RSAManagerImpl: RSAManager {
         var dividedNumberStringArray = text.toASCII
         var mergedNumberStringArray = [String]()
 
-        print("e", key.firstComponent, "n", key.secondComponent)
-//        print(ArithmeticHelper.instance.modExponentiation(base: 123, exponent: 7, mod: 143))
-//        print(ArithmeticHelper.instance.modExponentiation(base: 7, exponent: 103, mod: 143))
         if dividedNumberStringArray.count % 2 != 0 { dividedNumberStringArray.append("000") }
 
         for i in 0..<(dividedNumberStringArray.count / 2) {
@@ -38,11 +35,9 @@ class RSAManagerImpl: RSAManager {
 
     func decrypt(text: String, with key: Key) -> [Decimal] {
         let encryptedNumbers = text.split(separator: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.compactMap { Decimal(string: $0) }
-        print("d", key.firstComponent, "n", key.secondComponent)
-        print(encryptedNumbers)
         let decryptedNumbers = encryptedNumbers
             .map { ArithmeticHelper.instance.modExponentiation(base: $0, exponent: key.firstComponent, mod: key.secondComponent) }
         print(decryptedNumbers)
-        return []
+        return decryptedNumbers
     }
 }

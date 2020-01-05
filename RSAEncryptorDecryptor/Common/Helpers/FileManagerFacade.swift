@@ -13,6 +13,7 @@ protocol FileManagerFacade {
     func retrieveEncryptedStringFromFile() -> String?
     func retrieveKeyData(from url: URL) -> (String, String)?
     func save(encryptedText: String)
+    func save(decryptedText: String)
 }
 
 class FileManagerFacadeImpl: FileManagerFacade {
@@ -67,6 +68,16 @@ class FileManagerFacadeImpl: FileManagerFacade {
         do {
         let fileURL = URL(fileURLWithPath: path).appendingPathExtension("enc")
             try encryptedText.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch let error {
+            print(error.localizedDescription)
+            AppUtility.instance.showError(with: "Could not create file")
+        }
+    }
+
+    func save(decryptedText: String) {
+        do {
+        let fileURL = URL(fileURLWithPath: path).appendingPathExtension("dec")
+            try decryptedText.write(to: fileURL, atomically: true, encoding: .utf8)
         } catch let error {
             print(error.localizedDescription)
             AppUtility.instance.showError(with: "Could not create file")
