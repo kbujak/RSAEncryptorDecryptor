@@ -122,11 +122,16 @@ private extension RootViewModel {
 
         let decryptedArray = rsaManager.decrypt(text: text, with: key)
         let decryptedNumberStringsArray = decryptedArray.map { NSDecimalNumber(decimal: $0).stringValue }
-        let decryptedArrayString = decryptedNumberStringsArray.map { number -> String in
-            StringConverter.instance.convertFromASCIICodeToCharacterString(number)
+        do {
+            let decryptedArrayString = try decryptedNumberStringsArray.map { number -> String in
+                try StringConverter.instance.convertFromASCIICodeToCharacterString(number)
+            }
+            let decryptedString = decryptedArrayString.reduce("", { $0 + $1 })
+            self.text.accept("Decrypted text: \n\(decryptedString)")
+            fileManagerFacade.save(decryptedText: decryptedString)
+        } catch let error {
+            AppUtility.instance.showError(with: error.localizedDescription)
+            return
         }
-        let decryptedString = decryptedArrayString.reduce("", { $0 + $1 })
-        self.text.accept("Decrypted text: \n\(decryptedString)")
-        fileManagerFacade.save(decryptedText: decryptedString)
     }
 }

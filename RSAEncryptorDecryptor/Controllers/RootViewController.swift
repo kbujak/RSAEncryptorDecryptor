@@ -80,7 +80,7 @@ private extension RootViewController {
     func setupStyles() {
         view.backgroundColor = .white
 
-        textView.isUserInteractionEnabled = false
+        textView.isEditable = false
 
         publicKeyLabel.text = "KPub: not generated"
         privateKeyLabel.text = "KPriv: not generated"

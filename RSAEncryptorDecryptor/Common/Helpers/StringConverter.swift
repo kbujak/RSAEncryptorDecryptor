@@ -8,10 +8,20 @@
 
 import Foundation
 
+enum StringConverterException: LocalizedError {
+    case couldNotConvert
+
+    var errorDescription: String? {
+        switch self {
+        case .couldNotConvert: return "Could not convert value (probably bad private key was used)"
+        }
+    }
+}
+
 class StringConverter {
     static let instance = StringConverter()
 
-    func convertFromASCIICodeToCharacterString(_ asciiCode: String) -> String {
+    func convertFromASCIICodeToCharacterString(_ asciiCode: String) throws -> String {
         let numberCount = asciiCode.count
         let firstStringCodeStartIndex = asciiCode.startIndex
         let firstStringCodeEndIndex = numberCount == 5
@@ -23,8 +33,11 @@ class StringConverter {
         let firstStringCode = asciiCode[firstStringCodeStartIndex...firstStringCodeEndIndex]
         let secondStringCode = asciiCode[secondStringCodeStartIndex..<secondStringCodeEndIndex]
 
-        guard let firstCode = Int(firstStringCode), let secondCode = Int(secondStringCode) else { fatalError("Could not convert") }
-
+        guard
+            let firstCode = UInt8(firstStringCode),
+            let secondCode = UInt8(secondStringCode)
+        else { throw StringConverterException.couldNotConvert }
+        
         let firstCharacter = String(UnicodeScalar(UInt8(firstCode)))
         let secondCharacter = String(UnicodeScalar(UInt8(secondCode)))
 

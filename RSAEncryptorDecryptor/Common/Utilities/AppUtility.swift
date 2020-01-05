@@ -17,6 +17,8 @@ class AppUtility {
         let alert = UIAlertController(title: "Error",
                                       message: message,
                                       preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
         VC.present(alert, animated: true, completion: nil)
     }
 }
