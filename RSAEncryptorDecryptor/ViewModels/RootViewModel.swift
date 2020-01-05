@@ -41,24 +41,29 @@ class RootViewModel {
             .disposed(by: bag)
 
         input.encryptTrigger
+            .filter { [weak self] _ -> Bool in
+                let isPublicKeySet = self?.publicKey.value != nil
+                if !isPublicKeySet { AppUtility.instance.showError(with: "Public key not chosen") }
+                return isPublicKeySet
+            }
             .drive(onNext: { [weak self] in self?.encrypt() })
             .disposed(by: bag)
 
         input.decryptTrigger
+            .filter { [weak self] _ -> Bool in
+                let isPrivateKeySet = self?.privateKey.value != nil
+                if !isPrivateKeySet { AppUtility.instance.showError(with: "Private key not chosen") }
+                return isPrivateKeySet
+            }
             .drive(onNext: { [weak self] in self?.decrypt() })
             .disposed(by: bag)
 
         let publicKey = self.publicKey.filter { $0 != nil }.map { $0! }
         let privateKey = self.privateKey.filter { $0 != nil }.map { $0! }
-        
-        let isEncryptionEnabled = self.publicKey.map { $0 != nil }.asDriver(onErrorRecover: { _ in Driver.never() })
-        let isDecryptionEnabled = self.privateKey.map { $0 != nil }.asDriver(onErrorRecover: { _ in Driver.never() })
 
         return Output(
             publicKey: publicKey.asDriver(onErrorRecover: { _ in Driver.never() }),
             privateKey: privateKey.asDriver(onErrorRecover: { _ in Driver.never() }),
-            isEncryptionEnabled: isEncryptionEnabled,
-            isDecryptionEnabled: isDecryptionEnabled,
             text: text.asDriver()
         )
     }
@@ -85,8 +90,6 @@ extension RootViewModel {
     struct Output {
         let publicKey: Driver<Key>
         let privateKey: Driver<Key>
-        let isEncryptionEnabled: Driver<Bool>
-        let isDecryptionEnabled: Driver<Bool>
         let text: Driver<String>
     }
 }

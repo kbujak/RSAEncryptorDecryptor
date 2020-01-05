@@ -123,8 +123,6 @@ private extension RootViewController {
                 .map { "KPriv: {\($0.firstComponent), \($0.secondComponent)}" }
                 .drive(privateKeyLabel.rx.text),
 
-            output.isEncryptionEnabled.drive(encryptButton.rx.isEnabled),
-            output.isDecryptionEnabled.drive(decryptButton.rx.isEnabled),
             output.text.drive(textView.rx.text)
 
         ].forEach { $0.disposed(by: bag) }
