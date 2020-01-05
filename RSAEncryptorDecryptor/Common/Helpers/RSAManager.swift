@@ -15,13 +15,18 @@ protocol RSAManager {
 
 class RSAManagerImpl: RSAManager {
     func encrypt(text: String, with key: Key) -> [Decimal] {
-        var dividedNumberStringArray = text.toASCII
+        var dividedNumberStringArray = text.map { character -> String in
+            let scalars = character.unicodeScalars
+            return String(scalars[scalars.startIndex].value)
+        }
         var mergedNumberStringArray = [String]()
 
         if dividedNumberStringArray.count % 2 != 0 { dividedNumberStringArray.append("000") }
 
         for i in 0..<(dividedNumberStringArray.count / 2) {
-            let mergedNumberString = "\(dividedNumberStringArray[i * 2])\(dividedNumberStringArray[i * 2 + 1])"
+            let firstComponent = dividedNumberStringArray[i * 2].count == 2 ? "0\(dividedNumberStringArray[i * 2])" : dividedNumberStringArray[i * 2]
+            let secondComponent = dividedNumberStringArray[i * 2 + 1].count == 2 ? "0\(dividedNumberStringArray[i * 2 + 1])" : dividedNumberStringArray[i * 2 + 1]
+            let mergedNumberString = "\(firstComponent)\(secondComponent)"
             mergedNumberStringArray.append(mergedNumberString)
         }
 

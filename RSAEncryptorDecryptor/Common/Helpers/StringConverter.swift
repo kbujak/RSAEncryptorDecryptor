@@ -34,12 +34,14 @@ class StringConverter {
         let secondStringCode = asciiCode[secondStringCodeStartIndex..<secondStringCodeEndIndex]
 
         guard
-            let firstCode = UInt8(firstStringCode),
-            let secondCode = UInt8(secondStringCode)
+            let firstCode = UInt16(firstStringCode),
+            let secondCode = UInt16(secondStringCode),
+            let firstUnicodeScalar = UnicodeScalar(firstCode),
+            let secondUnicodeScalar = UnicodeScalar(secondCode)
         else { throw StringConverterException.couldNotConvert }
-        
-        let firstCharacter = String(UnicodeScalar(UInt8(firstCode)))
-        let secondCharacter = String(UnicodeScalar(UInt8(secondCode)))
+
+        let firstCharacter = String(firstUnicodeScalar)
+        let secondCharacter = String(secondUnicodeScalar)
 
         print("\(firstCharacter)\(secondCharacter)")
         return "\(firstCharacter)\(secondCharacter)"

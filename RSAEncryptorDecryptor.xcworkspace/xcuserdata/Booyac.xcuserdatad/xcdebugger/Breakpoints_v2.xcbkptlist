@@ -14,8 +14,88 @@
             filePath = "RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44">
+            startingLineNumber = "49"
+            endingLineNumber = "49">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E58F28E7-A53D-4BBE-86B8-C4FA338D7BAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSAEncryptorDecryptor/Common/Helpers/StringConverter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "convertFromASCIICodeToCharacterString(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB265D07-A864-48A0-8DF0-FC51DDC69A75"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "encrypt(text:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A62C10DF-AB34-4A52-92A7-C1CF539472F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "encrypt(text:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A62C10DF-AB34-4A52-92A7-C1CF539472F9 - 8d3204f425d02745"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RSAEncryptorDecryptor.RSAManagerImpl.encrypt(text: Swift.String, with: RSAEncryptorDecryptor.Key) -&gt; Swift.Array&lt;__C.NSDecimal&gt;"
+                  moduleName = "RSAEncryptorDecryptor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Booyac/Developer/RSAEncryptorDecryptor/RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "3230">
+               </Location>
+               <Location
+                  uuid = "A62C10DF-AB34-4A52-92A7-C1CF539472F9 - d5940d434d00bc9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; Swift.Optional&lt;__C.NSDecimal&gt; in RSAEncryptorDecryptor.RSAManagerImpl.encrypt(text: Swift.String, with: RSAEncryptorDecryptor.Key) -&gt; Swift.Array&lt;__C.NSDecimal&gt;"
+                  moduleName = "RSAEncryptorDecryptor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Booyac/Developer/RSAEncryptorDecryptor/RSAEncryptorDecryptor/Common/Helpers/RSAManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "99">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
